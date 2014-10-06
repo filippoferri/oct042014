@@ -23,6 +23,20 @@ var Roots = {
   common: {
     init: function() {
       // JavaScript to be fired on all pages
+        $(function() {
+            $('.menuOpen').on('click', function() {
+              $('.main-canvas').toggleClass('isOpen');
+              if ($('.main-canvas').hasClass('isOpen')) {
+                $('.wrap, footer').foggy();
+                $("body").css("overflow-y","hidden");
+                $('.off-canvas').css('right', '-200px');
+              } else {
+                $('.wrap, footer').foggy(false);
+                $("body").css("overflow-y","visible");
+                $('.off-canvas').css('right', '-400px');
+              }
+            });
+          });
     }
   },
   // Home page

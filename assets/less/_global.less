@@ -1,0 +1,43 @@
+html,
+body { height: 100%; }
+
+body {
+  display: flex;
+  overflow-x: hidden;
+}
+
+
+.off-canvas {
+  position: absolute;
+  width: 260px;
+  top: 0;
+  right: -260px;
+  background-color: @brand-primary;
+  height: 100%;
+  z-index: 1020;
+  .transition(right .2s ease-in-out);
+}
+
+.main-canvas{
+  .transform(translate3d(0, 0, 0));
+  .transition(transform .3s);
+  .flex(1);
+
+  &.isOpen { .transform(translate3d(-160px, 0, 0)); }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+  .off-canvas { width: 400px; right: -400px }
+  .main-canvas.isOpen { .transform(translate3d(-200px, 0, 0)); }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {  }
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) { }

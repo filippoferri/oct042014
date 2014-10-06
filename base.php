@@ -7,6 +7,8 @@
     </div>
   <![endif]-->
 
+
+<div class="main-canvas">
   <?php
     do_action('get_header');
     get_template_part('templates/header');
@@ -26,6 +28,7 @@
   </div><!-- /.wrap -->
 
   <?php get_template_part('templates/footer'); ?>
+  </div>
 
   <?php wp_footer(); ?>
 
