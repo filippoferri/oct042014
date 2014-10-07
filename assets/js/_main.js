@@ -22,21 +22,67 @@ var Roots = {
   // All pages
   common: {
     init: function() {
-      // JavaScript to be fired on all pages
-        $(function() {
-            $('.menuOpen').on('click', function() {
-              $('.main-canvas').toggleClass('isOpen');
-              if ($('.main-canvas').hasClass('isOpen')) {
-                $('.wrap, footer').foggy();
-                $("body").css("overflow-y","hidden");
-                $('.off-canvas').css('right', '-200px');
-              } else {
-                $('.wrap, footer').foggy(false);
-                $("body").css("overflow-y","visible");
-                $('.off-canvas').css('right', '-400px');
-              }
-            });
+      // JavaScript to be fired on all page
+
+        $(document).ready(function() {
+
+          //Animation page
+          $(".animsition-overlay").animsition({
+
+            inClass               :   'overlay-slide-in-right',
+            outClass              :   'overlay-slide-out-right',
+            inDuration            :    3000,
+            outDuration           :    800,
+            linkElement           :   '.main-menu a',
+            // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+            touchSupport          :    true,
+            loading               :    true,
+            loadingParentElement  :   'body', //animsition wrapper element
+            loadingClass          :   'animsition-loading',
+            unSupportCss          : [ 'animation-duration',
+                                      '-webkit-animation-duration',
+                                      '-o-animation-duration'
+                                    ],
+            //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+            //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+
+            overlay               :   true,
+
+            overlayClass          :   'animsition-overlay-slide',
+            overlayParentElement  :   'body'
           });
+
+          //Off Canvas
+          $(function() {
+              $('.menuOpen').on('click', function() {
+                $('.main-canvas').toggleClass('isOpen');
+                if ($('.main-canvas').hasClass('isOpen')) {
+                  //$('.wrap, footer').foggy();
+                  $('.off-canvas').css('right', '-200px');
+                } else {
+                  //$('.wrap, footer').foggy(false);
+                  $('.off-canvas').css('right', '-400px');
+                }
+              });
+            });
+
+          //Full page slide
+          $('#fullpage').fullpage({
+            verticalCentered: true,
+            scrollOverflow: true,
+            resize: false,
+            sectionsColor : ['#FFFFFF', '#ecf0f1'],
+          });
+
+          //bg gradient
+          $(function() {
+            rollBg();
+            setInterval(rollBg, 10000);
+          });
+
+        }); // End Document Ready
+
+
     }
   },
   // Home page

@@ -1,5 +1,5 @@
 <header class="banner" role="banner">
-  <div class="container">
+  <div class="container-fluid">
     <span class="menuOpen pull-right"><span class="fi fi-menu"></span></span>
   </div>
 </header>

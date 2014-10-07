@@ -2,27 +2,27 @@
 //
 //## Gray and brand colors for use across Bootstrap.
 
-@gray-base:              #46403c;
+@gray-base:              #2A2A2A;
 @gray-darker:            lighten(@gray-base, 0%);
 @gray-dark:              lighten(@gray-base, 10%);
 @gray:                   lighten(@gray-base, 20%);
 @gray-light:             lighten(@gray-base, 30%);
 @gray-lighter:           lighten(@gray-base, 40%);
 
-@brand-primary:         #a0c263;
-@brand-success:         #93ab67;
-@brand-info:            #38b6cd;
-@brand-warning:         #f5c531;
-@brand-danger:          #f53131;
+@brand-primary:         #c0392b;
+@brand-success:         #2ecc71;
+@brand-info:            #3498db;
+@brand-warning:         #f1c40f;
+@brand-danger:          #c0392b;
 
 //== Scaffolding
 //
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-@body-bg:               #FFFFFF;
+@body-bg:               #ecf0f1;
 //** Global text color on `<body>`.
-@text-color:            @gray-darker;
+@text-color:            @gray-base;
 
 //** Global textual link color.
 @link-color:            darken(@brand-primary, 15%);
@@ -32,9 +32,14 @@
 //== Typography
 //
 //## Font, line-height, and color for body text, headings, and more.
-@import url(http://fonts.googleapis.com/css?family=Montserrat|Crimson+Text);
-@sans-serif:  "Montserrat", Thaoma, Verdana, Segoe, sans-serif;
-@serif:       "Crimson Text", "Hoefler Text", Garamond, "Times New Roman", serif;
+@import url(http://fonts.googleapis.com/css?family=Merriweather|Crimson+Text);
+@font-face {
+  font-family: 'BigJoe';
+  src: url('../fonts/big-joe.woff') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('../fonts/big-joe.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+@sans-serif:  "BigJoe", Thaoma, Verdana, Segoe, sans-serif;
+@serif:       "Merriweather", "Hoefler Text", Garamond, "Times New Roman", serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
 @font-family-base:        @serif;
@@ -44,8 +49,8 @@
 
 
 //** By default, this inherits from the `<body>`.
-@headings-font-family:    @sans-serif;
-@headings-font-weight:    400;
+@headings-font-family:    "BigJoe", Thaoma, Verdana, Segoe, sans-serif;
+@headings-font-weight:    normal;
 @headings-line-height:    1.1;
 @headings-color:          inherit;
 
